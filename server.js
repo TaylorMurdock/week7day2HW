@@ -6,7 +6,20 @@ const port = 3000;
 app.set("view engine", "ejs");
 
 // Require the drinks data from the drinks.js file
-const drinks = require("./models/drinks");
+let drinks = require("./models/drinks");
+
+// Capitalize the first letter of each drink name
+drinks = drinks.map((drink) => {
+  return {
+    ...drink,
+    name: capitalizeFirstLetter(drink.name),
+  };
+});
+
+// Helper function to capitalize the first letter of a string
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 app.get("/", (req, res) => {
   res.send("Welcome to the Gitpub App!");
