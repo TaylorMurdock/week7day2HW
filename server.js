@@ -29,6 +29,19 @@ app.get("/drinks", (req, res) => {
   res.render("index", { drinks: drinks });
 });
 
+app.get("/drinks/:id", (req, res) => {
+  const drinkId = req.params.id;
+  const drink = drinks.find(
+    (drink) => drink.name.toLowerCase() === drinkId.toLowerCase()
+  );
+
+  if (drink) {
+    res.render("show", { drink: drink });
+  } else {
+    res.send("Drink not found");
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

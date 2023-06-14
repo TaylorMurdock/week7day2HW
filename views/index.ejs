@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!DOCTYPE html>
-<html>
-
 <head>
     <title>GitPub</title>
     <style>
@@ -20,7 +17,7 @@
     <ul>
         <% drinks.forEach(function(drink) { %>
             <li>
-                <a href="/drinks/<%= drink.name %>">
+                <a href="/drinks/<%= drink.name.toLowerCase() %>">
                     <%= drink.name %>
                 </a>
             </li>

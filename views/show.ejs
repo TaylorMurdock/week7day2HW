@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitPub</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drink Details</h1>
+    <h2>
+        <%= drink.name %>
+    </h2>
+    <img src="<%= drink.image %>" alt="<%= drink.name %> Image">
+    <p>Price: $<%= drink.price %>
+    </p>
+    <a href="/drinks">Back to Drinks</a>
+</body>
+
+</html>
