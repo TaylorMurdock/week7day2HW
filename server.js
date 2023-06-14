@@ -35,6 +35,11 @@ app.get("/drinks/:id", (req, res) => {
     (drink) => drink.name.toLowerCase() === drinkId.toLowerCase()
   );
 
+  app.get("/drinks/:id", (req, res) => {
+    const drink = drinks[req.params.id];
+    res.render("show", { drink });
+  });
+
   if (drink) {
     res.render("show", { drink: drink });
   } else {

@@ -2,26 +2,26 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>GitPub</title>
     <style>
         body {
-            background-color: #f2f2f2;
-            color: #333;
+            background-color: lightgray;
+            color: black;
         }
     </style>
 </head>
 
 <body>
     <h1>Welcome to GitPub</h1>
-    <h2>Drinks Available:</h2>
     <ul>
-        <% drinks.forEach(function(drink) { %>
+        <% for (let i=0; i < drinks.length; i++) { %>
             <li>
-                <a href="/drinks/<%= drink.name.toLowerCase() %>">
-                    <%= drink.name %>
+                <a href="/drinks/<%= i %>">
+                    <%= drinks[i].name %>
                 </a>
             </li>
-            <% }); %>
+            <% } %>
     </ul>
 </body>
 
