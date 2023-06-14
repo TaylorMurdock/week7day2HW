@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitPub</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to GitPub</h1>
+    <h2>Drinks Available:</h2>
+    <ul>
+        <% drinks.forEach(function(drink) { %>
+            <li>
+                <a href="/drinks/<%= drink.name %>">
+                    <%= drink.name %>
+                </a>
+            </li>
+            <% }); %>
+    </ul>
+</body>
+
+</html>
