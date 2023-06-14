@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -31,14 +32,7 @@ app.get("/drinks", (req, res) => {
 
 app.get("/drinks/:id", (req, res) => {
   const drinkId = req.params.id;
-  const drink = drinks.find(
-    (drink) => drink.name.toLowerCase() === drinkId.toLowerCase()
-  );
-
-  app.get("/drinks/:id", (req, res) => {
-    const drink = drinks[req.params.id];
-    res.render("show", { drink });
-  });
+  const drink = drinks[drinkId];
 
   if (drink) {
     res.render("show", { drink: drink });
